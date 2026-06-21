@@ -21,24 +21,16 @@
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text);
     min-height:100vh;overflow-x:hidden;position:relative;background:#05060f;
     display:flex;justify-content:center;padding:60px 18px 64px}
-  /* ночное небо */
-  .sky{position:fixed;inset:0;z-index:-3;
-    background:radial-gradient(120% 80% at 50% 0%,#15163a 0%,#0a0a1f 45%,#05060f 100%)}
-  /* реалистичная луна-фон */
-  .moon{position:fixed;top:-70px;left:50%;transform:translateX(-50%);z-index:-2;
-    width:340px;height:340px;border-radius:50%;
+  .sky{position:fixed;inset:0;z-index:-3;background:radial-gradient(120% 80% at 50% 0%,#15163a 0%,#0a0a1f 45%,#05060f 100%)}
+  .moon{position:fixed;top:-70px;left:50%;transform:translateX(-50%);z-index:-2;width:340px;height:340px;border-radius:50%;
     background:url("moon.jpg") center/cover no-repeat;
-    box-shadow:0 0 90px 30px rgba(180,190,255,.35),0 0 200px 60px rgba(120,130,220,.2);
-    opacity:.92;animation:glow 8s ease-in-out infinite}
+    box-shadow:0 0 90px 30px rgba(180,190,255,.35),0 0 200px 60px rgba(120,130,220,.2);opacity:.92;animation:glow 8s ease-in-out infinite}
   @keyframes glow{0%,100%{box-shadow:0 0 90px 30px rgba(180,190,255,.35),0 0 200px 60px rgba(120,130,220,.2)}
     50%{box-shadow:0 0 110px 40px rgba(200,205,255,.45),0 0 240px 80px rgba(140,150,230,.28)}}
-  /* затемнение снизу для читаемости */
   .veil{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,6,15,0) 18%,rgba(5,6,15,.55) 40%,rgba(5,6,15,.85) 70%)}
-  /* звёзды */
   .stars{position:fixed;inset:0;z-index:-2;opacity:.5}
   .stars i{position:absolute;background:#fff;border-radius:50%;animation:tw 3s infinite}
   @keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
-
   .wrap{width:100%;max-width:470px;text-align:center;margin-top:170px;animation:rise .6s ease both}
   @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
   .ava-ring{width:118px;height:118px;margin:0 auto 16px;border-radius:50%;padding:3px;
@@ -55,24 +47,22 @@
   .bio{color:var(--muted);font-size:15px;margin:11px auto 28px;line-height:1.5;max-width:320px}
   .links{display:flex;flex-direction:column;gap:13px}
   a.link{display:flex;align-items:center;gap:14px;background:var(--card);backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);border:1px solid var(--stroke);border-radius:17px;padding:17px 20px;
+    -webkit-backdrop-filter:blur(14px);border:1px solid var(--stroke);border-radius:17px;padding:15px 18px;
     color:var(--text);text-decoration:none;font-size:16px;font-weight:600;position:relative;overflow:hidden;
     transition:transform .18s,background .18s,box-shadow .18s;box-shadow:0 4px 20px rgba(0,0,0,.3);animation:rise .5s ease both}
   a.link:hover,a.link:active{background:var(--card-h);transform:translateY(-3px) scale(1.01)}
-  a.link.cta{background:linear-gradient(120deg,rgba(255,94,156,.95),rgba(161,107,255,.9));border-color:transparent;
-    box-shadow:0 8px 28px rgba(255,94,156,.4)}
-  a.link.cta::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
-    background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite}
-  @keyframes shine{0%,60%{left:-120%}80%,100%{left:130%}}
-  a.link .ico{font-size:22px;width:26px;text-align:center;flex:none}
+  a.link.cta{border-color:rgba(255,94,156,.45);box-shadow:0 6px 24px rgba(255,94,156,.22)}
+  a.link .ico{width:30px;height:30px;flex:none;display:flex;align-items:center;justify-content:center}
+  a.link .ico img{width:26px;height:26px;object-fit:contain}
   a.link .txt{flex:1;text-align:left}
-  a.link .arrow{opacity:.6;font-size:18px;transition:transform .18s}
+  a.link .arrow{opacity:.55;font-size:18px;transition:transform .18s}
   a.link:hover .arrow{transform:translateX(4px)}
-  .socials{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:28px}
-  .socials a{width:46px;height:46px;border-radius:50%;background:var(--card);border:1px solid var(--stroke);
-    display:flex;align-items:center;justify-content:center;font-size:21px;text-decoration:none;
+  .socials{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:28px}
+  .socials a{width:48px;height:48px;border-radius:50%;background:var(--card);border:1px solid var(--stroke);
+    display:flex;align-items:center;justify-content:center;text-decoration:none;
     transition:transform .18s,background .18s;backdrop-filter:blur(10px)}
-  .socials a:hover{background:var(--card-h);transform:translateY(-3px) scale(1.08)}
+  .socials a img{width:23px;height:23px;object-fit:contain}
+  .socials a:hover{background:var(--card-h);transform:translateY(-3px) scale(1.1)}
   footer{margin-top:32px;color:rgba(255,255,255,.32);font-size:12px}
 </style>
 </head>
@@ -98,22 +88,21 @@ const PROFILE = {
   avatar: "",            // put photo URL here (e.g. "avatar.jpg") to replace the moon
   avatarEmoji: "🌙",
   links: [
-    { ico:"💬", text:"Telegram",            url:"https://t.me/+eBQ8r2dSR3o0Nzli", cta:true },
-    { ico:"💎", text:"Fanvue — exclusive",   url:"https://www.fanvue.com/sasha.m", cta:true },
-    { ico:"🔥", text:"OnlyFans",             url:"https://onlyfans.com/sasha_moon", cta:true },
+    { icon:"icons/telegram.svg", text:"Telegram",          url:"https://t.me/+eBQ8r2dSR3o0Nzli", cta:true },
+    { icon:"icons/fanvue.svg",   text:"Fanvue — exclusive", url:"https://www.fanvue.com/sasha.m", cta:true },
+    { icon:"icons/onlyfans.svg", text:"OnlyFans",           url:"https://onlyfans.com/sasha_moon", cta:true },
   ],
   socials: [
-    { ico:"📷", url:"https://www.instagram.com/sasha_moon00/" },
-    { ico:"🧵", url:"https://www.threads.com/@sasha_moon00" },
-    { ico:"🎵", url:"https://www.tiktok.com/@sashamoon30" },
-    { ico:"𝕏", url:"https://x.com/SashaMoon00" },
-    { ico:"👤", url:"https://www.facebook.com/profile.php?id=61590896252495" },
+    { icon:"icons/instagram.svg", url:"https://www.instagram.com/sasha_moon00/" },
+    { icon:"icons/threads.svg",   url:"https://www.threads.com/@sasha_moon00" },
+    { icon:"icons/tiktok.svg",    url:"https://www.tiktok.com/@sashamoon30" },
+    { icon:"icons/x.svg",         url:"https://x.com/SashaMoon00" },
+    { icon:"icons/facebook.svg",  url:"https://www.facebook.com/profile.php?id=61590896252495" },
   ],
 };
 /* ====== /EDIT HERE ====== */
 (function(){
   var $=function(i){return document.getElementById(i)};
-  // звёзды
   var st="";for(var i=0;i<50;i++){var s=Math.random()*2+1;st+='<i style="left:'+Math.random()*100+'%;top:'+Math.random()*60+'%;width:'+s+'px;height:'+s+'px;animation-delay:'+Math.random()*3+'s"></i>';}
   $("stars").innerHTML=st;
   $("name").textContent=PROFILE.name;$("handle").textContent=PROFILE.handle;
@@ -123,9 +112,10 @@ const PROFILE = {
   var L=$("links");
   PROFILE.links.forEach(function(l,i){var a=document.createElement("a");a.className="link"+(l.cta?" cta":"");
     a.href=l.url;a.target="_blank";a.rel="noopener";a.style.animationDelay=(0.1+i*0.07)+"s";
-    a.innerHTML='<span class="ico">'+l.ico+'</span><span class="txt">'+l.text+'</span><span class="arrow">→</span>';L.appendChild(a);});
+    a.innerHTML='<span class="ico"><img src="'+l.icon+'" alt=""></span><span class="txt">'+l.text+'</span><span class="arrow">→</span>';L.appendChild(a);});
   var S=$("socials");
-  PROFILE.socials.forEach(function(s){var a=document.createElement("a");a.href=s.url;a.target="_blank";a.rel="noopener";a.textContent=s.ico;S.appendChild(a);});
+  PROFILE.socials.forEach(function(s){var a=document.createElement("a");a.href=s.url;a.target="_blank";a.rel="noopener";
+    a.innerHTML='<img src="'+s.icon+'" alt="">';S.appendChild(a);});
   $("yr").textContent=new Date().getFullYear();
 })();
 </script>
