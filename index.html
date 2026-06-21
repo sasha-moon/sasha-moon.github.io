@@ -14,44 +14,44 @@
 <meta name="theme-color" content="#05060f">
 <link rel="icon" href="img/main.jpg">
 <style>
-  :root{--accent:#ff5e9c;--accent2:#a16bff;--text:#fff;--muted:rgba(255,255,255,.72);
-    --card:rgba(255,255,255,.10);--card-h:rgba(255,255,255,.2);--stroke:rgba(255,255,255,.16)}
+  :root{--accent:#ff5e9c;--accent2:#a16bff;--text:#fff;--muted:rgba(255,255,255,.75)}
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html{-webkit-text-size-adjust:100%}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text);
-    min-height:100vh;overflow-x:hidden;position:relative;display:flex;justify-content:center;padding:34px 16px 60px}
+    min-height:100vh;overflow-x:hidden;position:relative;display:flex;justify-content:center;padding:40px 16px 60px}
   .bg{position:fixed;inset:0;z-index:-2;background:#05060f url("moon.jpg") center top/cover no-repeat fixed}
-  .veil{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,6,15,.3) 0%,rgba(5,6,15,.55) 45%,rgba(5,6,15,.9) 100%)}
-  .wrap{width:100%;max-width:460px;text-align:center;animation:rise .6s ease both}
+  .veil{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,6,15,.3) 0%,rgba(5,6,15,.6) 50%,rgba(5,6,15,.92) 100%)}
+  .wrap{width:100%;max-width:440px;text-align:center;animation:rise .6s ease both}
   @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-  /* большое фото-герой (15d3aa98), БЕЗ обрезки, на всю длину */
-  .hero{width:100%;max-width:340px;margin:0 auto 16px;border-radius:22px;overflow:hidden;
-    box-shadow:0 14px 50px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.12)}
-  .hero img{width:100%;height:auto;display:block}
+  .ava-ring{width:104px;height:104px;margin:0 auto 12px;border-radius:50%;padding:3px;
+    background:conic-gradient(from 0deg,var(--accent),var(--accent2),#5ec6ff,var(--accent));box-shadow:0 10px 40px rgba(0,0,0,.55)}
+  .avatar{width:100%;height:100%;border-radius:50%;overflow:hidden;background:#12122e}
+  .avatar img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
   .name-row{display:flex;align-items:center;justify-content:center;gap:7px}
-  h1{font-size:28px;font-weight:800;text-shadow:0 2px 12px rgba(0,0,0,.6)}
-  .verified{width:22px;height:22px;flex:none}
+  h1{font-size:27px;font-weight:800;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+  .verified{width:21px;height:21px;flex:none}
   .handle{color:#ff8ab8;font-size:14px;margin-top:4px;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.6)}
-  .bio{color:var(--muted);font-size:15px;margin:10px auto 24px;line-height:1.5;max-width:320px;text-shadow:0 1px 8px rgba(0,0,0,.6)}
-  .links{display:flex;flex-direction:column;gap:14px}
-  /* карточка: крупное фото с сигаретную пачку (портрет) */
-  a.link{display:flex;align-items:center;gap:15px;background:var(--card);backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);border:1px solid var(--stroke);border-radius:18px;padding:10px 16px 10px 10px;
-    color:var(--text);text-decoration:none;font-size:17px;font-weight:700;position:relative;overflow:hidden;
-    transition:transform .18s,background .18s,box-shadow .18s;box-shadow:0 6px 22px rgba(0,0,0,.4);animation:rise .5s ease both}
-  a.link:hover,a.link:active{background:var(--card-h);transform:translateY(-3px) scale(1.01);box-shadow:0 12px 30px rgba(0,0,0,.5)}
-  a.link.cta{border-color:rgba(255,94,156,.5)}
-  a.link .ph{width:64px;height:96px;border-radius:12px;object-fit:cover;flex:none;box-shadow:0 3px 12px rgba(0,0,0,.5)}
-  a.link .txt{flex:1;text-align:left}
-  a.link .arrow{opacity:.6;font-size:20px;transition:transform .18s}
-  a.link:hover .arrow{transform:translateX(4px)}
+  .bio{color:var(--muted);font-size:15px;margin:9px auto 24px;line-height:1.5;max-width:320px;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+  .links{display:flex;flex-direction:column;gap:16px}
+  /* КАЖДАЯ КНОПКА = большое фото на всю ширину */
+  a.link{position:relative;display:block;width:100%;height:300px;border-radius:22px;overflow:hidden;
+    text-decoration:none;color:#fff;box-shadow:0 8px 30px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);
+    transition:transform .2s,box-shadow .2s;animation:rise .5s ease both}
+  a.link:hover,a.link:active{transform:translateY(-3px) scale(1.012);box-shadow:0 16px 40px rgba(0,0,0,.6)}
+  a.link img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
+  a.link .label{position:absolute;left:0;right:0;bottom:0;padding:16px 20px;display:flex;align-items:center;gap:10px;
+    background:linear-gradient(180deg,transparent,rgba(0,0,0,.4) 40%,rgba(0,0,0,.82));
+    font-size:21px;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.7)}
+  a.link.cta .label{background:linear-gradient(180deg,transparent,rgba(255,40,110,.25) 40%,rgba(0,0,0,.85))}
+  a.link .label .arrow{margin-left:auto;font-size:22px;opacity:.85;transition:transform .2s}
+  a.link:hover .label .arrow{transform:translateX(5px)}
   footer{margin-top:30px;color:rgba(255,255,255,.4);font-size:12px;text-shadow:0 1px 6px rgba(0,0,0,.6)}
 </style>
 </head>
 <body>
 <div class="bg"></div><div class="veil"></div>
 <div class="wrap">
-  <div class="hero"><img src="img/main.jpg" alt="Sasha Moon"></div>
+  <div class="ava-ring"><div class="avatar"><img src="img/main.jpg" alt="Sasha Moon"></div></div>
   <div class="name-row"><h1 id="name"></h1>
     <svg class="verified" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 1.8 3 .1 1 2.8 2.4 1.8-1 2.8 1 2.8-2.4 1.8-1 2.8-3 .1L12 22l-2.4-1.8-3-.1-1-2.8L3.2 15.5l1-2.8-1-2.8 2.4-1.8 1-2.8 3-.1L12 2z" fill="#5ec6ff"/><path d="M8.5 12.2l2.3 2.3 4.7-4.7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
@@ -83,8 +83,8 @@ const PROFILE = {
   $("bio").textContent=PROFILE.bio;document.title=PROFILE.name;
   var L=$("links");
   PROFILE.links.forEach(function(l,i){var a=document.createElement("a");a.className="link"+(l.cta?" cta":"");
-    a.href=l.url;a.target="_blank";a.rel="noopener";a.style.animationDelay=(0.08+i*0.06)+"s";
-    a.innerHTML='<img class="ph" src="'+l.ph+'" alt=""><span class="txt">'+l.text+'</span><span class="arrow">→</span>';L.appendChild(a);});
+    a.href=l.url;a.target="_blank";a.rel="noopener";a.style.animationDelay=(0.08+i*0.05)+"s";
+    a.innerHTML='<img src="'+l.ph+'" alt=""><span class="label">'+l.text+'<span class="arrow">→</span></span>';L.appendChild(a);});
   $("yr").textContent=new Date().getFullYear();
 })();
 </script>
