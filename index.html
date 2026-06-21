@@ -8,44 +8,42 @@
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Sasha Moon ✨">
 <meta property="og:description" content="Exclusive 18+ content 💫">
-<meta property="og:image" content="img/avatar.jpg">
+<meta property="og:image" content="img/main.jpg">
 <meta property="og:url" content="https://sasha-moon.github.io">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#05060f">
-<link rel="icon" href="img/avatar.jpg">
+<link rel="icon" href="img/main.jpg">
 <style>
-  :root{--accent:#ff5e9c;--accent2:#a16bff;--text:#fff;--muted:rgba(255,255,255,.7);
+  :root{--accent:#ff5e9c;--accent2:#a16bff;--text:#fff;--muted:rgba(255,255,255,.72);
     --card:rgba(255,255,255,.10);--card-h:rgba(255,255,255,.2);--stroke:rgba(255,255,255,.16)}
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html{-webkit-text-size-adjust:100%}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text);
-    min-height:100vh;overflow-x:hidden;position:relative;
-    display:flex;justify-content:center;padding:56px 18px 64px}
-  /* луна на весь фон */
+    min-height:100vh;overflow-x:hidden;position:relative;display:flex;justify-content:center;padding:34px 16px 60px}
   .bg{position:fixed;inset:0;z-index:-2;background:#05060f url("moon.jpg") center top/cover no-repeat fixed}
-  .veil{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,6,15,.35) 0%,rgba(5,6,15,.55) 45%,rgba(5,6,15,.88) 100%)}
-  .wrap{width:100%;max-width:480px;text-align:center;animation:rise .6s ease both}
+  .veil{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,6,15,.3) 0%,rgba(5,6,15,.55) 45%,rgba(5,6,15,.9) 100%)}
+  .wrap{width:100%;max-width:460px;text-align:center;animation:rise .6s ease both}
   @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-  .ava-ring{width:114px;height:114px;margin:0 auto 14px;border-radius:50%;padding:3px;
-    background:conic-gradient(from 0deg,var(--accent),var(--accent2),#5ec6ff,var(--accent));
-    box-shadow:0 10px 40px rgba(0,0,0,.5)}
-  .avatar{width:100%;height:100%;border-radius:50%;overflow:hidden;background:#12122e}
-  .avatar img{width:100%;height:100%;object-fit:cover}
+  /* большое фото-герой (15d3aa98), БЕЗ обрезки, на всю длину */
+  .hero{width:100%;max-width:340px;margin:0 auto 16px;border-radius:22px;overflow:hidden;
+    box-shadow:0 14px 50px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.12)}
+  .hero img{width:100%;height:auto;display:block}
   .name-row{display:flex;align-items:center;justify-content:center;gap:7px}
-  h1{font-size:27px;font-weight:800;text-shadow:0 2px 12px rgba(0,0,0,.5)}
-  .verified{width:21px;height:21px;flex:none}
-  .handle{color:#ff8ab8;font-size:14px;margin-top:4px;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.5)}
-  .bio{color:var(--muted);font-size:15px;margin:10px auto 26px;line-height:1.5;max-width:320px;text-shadow:0 1px 8px rgba(0,0,0,.5)}
-  .links{display:flex;flex-direction:column;gap:13px}
-  a.link{display:flex;align-items:center;gap:14px;background:var(--card);backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);border:1px solid var(--stroke);border-radius:18px;padding:11px 16px 11px 11px;
-    color:var(--text);text-decoration:none;font-size:16.5px;font-weight:700;position:relative;overflow:hidden;
-    transition:transform .18s,background .18s,box-shadow .18s;box-shadow:0 6px 22px rgba(0,0,0,.35);animation:rise .5s ease both}
-  a.link:hover,a.link:active{background:var(--card-h);transform:translateY(-3px) scale(1.01);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+  h1{font-size:28px;font-weight:800;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+  .verified{width:22px;height:22px;flex:none}
+  .handle{color:#ff8ab8;font-size:14px;margin-top:4px;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+  .bio{color:var(--muted);font-size:15px;margin:10px auto 24px;line-height:1.5;max-width:320px;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+  .links{display:flex;flex-direction:column;gap:14px}
+  /* карточка: крупное фото с сигаретную пачку (портрет) */
+  a.link{display:flex;align-items:center;gap:15px;background:var(--card);backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);border:1px solid var(--stroke);border-radius:18px;padding:10px 16px 10px 10px;
+    color:var(--text);text-decoration:none;font-size:17px;font-weight:700;position:relative;overflow:hidden;
+    transition:transform .18s,background .18s,box-shadow .18s;box-shadow:0 6px 22px rgba(0,0,0,.4);animation:rise .5s ease both}
+  a.link:hover,a.link:active{background:var(--card-h);transform:translateY(-3px) scale(1.01);box-shadow:0 12px 30px rgba(0,0,0,.5)}
   a.link.cta{border-color:rgba(255,94,156,.5)}
-  a.link .ph{width:52px;height:52px;border-radius:13px;object-fit:cover;flex:none;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+  a.link .ph{width:64px;height:96px;border-radius:12px;object-fit:cover;flex:none;box-shadow:0 3px 12px rgba(0,0,0,.5)}
   a.link .txt{flex:1;text-align:left}
-  a.link .arrow{opacity:.6;font-size:19px;transition:transform .18s}
+  a.link .arrow{opacity:.6;font-size:20px;transition:transform .18s}
   a.link:hover .arrow{transform:translateX(4px)}
   footer{margin-top:30px;color:rgba(255,255,255,.4);font-size:12px;text-shadow:0 1px 6px rgba(0,0,0,.6)}
 </style>
@@ -53,7 +51,7 @@
 <body>
 <div class="bg"></div><div class="veil"></div>
 <div class="wrap">
-  <div class="ava-ring"><div class="avatar"><img src="img/avatar.jpg" alt="Sasha Moon"></div></div>
+  <div class="hero"><img src="img/main.jpg" alt="Sasha Moon"></div>
   <div class="name-row"><h1 id="name"></h1>
     <svg class="verified" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 1.8 3 .1 1 2.8 2.4 1.8-1 2.8 1 2.8-2.4 1.8-1 2.8-3 .1L12 22l-2.4-1.8-3-.1-1-2.8L3.2 15.5l1-2.8-1-2.8 2.4-1.8 1-2.8 3-.1L12 2z" fill="#5ec6ff"/><path d="M8.5 12.2l2.3 2.3 4.7-4.7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
@@ -69,13 +67,13 @@ const PROFILE = {
   handle: "@sasha_moon00",
   bio: "Exclusive 18+ content 💫",
   links: [
-    { ph:"img/telegram.jpg", text:"Telegram",            url:"https://t.me/+eBQ8r2dSR3o0Nzli", cta:true },
-    { ph:"img/fanvue.jpg",   text:"Fanvue — exclusive",   url:"https://www.fanvue.com/sasha.m", cta:true },
-    { ph:"img/onlyfans.jpg", text:"OnlyFans",             url:"https://onlyfans.com/sasha_moon", cta:true },
-    { ph:"img/fansly.jpg",   text:"Fansly",               url:"https://fansly.com/settings/payments", cta:true },
-    { ph:"img/threads.jpg",  text:"Threads",              url:"https://www.threads.com/@sasha_moon00" },
-    { ph:"img/x.jpg",        text:"X (Twitter)",          url:"https://x.com/SashaMoon00" },
-    { ph:"img/facebook.jpg", text:"Facebook",             url:"https://www.facebook.com/profile.php?id=61590896252495" },
+    { ph:"img/telegram.jpg", text:"Telegram",          url:"https://t.me/+eBQ8r2dSR3o0Nzli", cta:true },
+    { ph:"img/fanvue.jpg",   text:"Fanvue — exclusive", url:"https://www.fanvue.com/sasha.m", cta:true },
+    { ph:"img/onlyfans.jpg", text:"OnlyFans",           url:"https://onlyfans.com/sasha_moon", cta:true },
+    { ph:"img/fansly.jpg",   text:"Fansly",             url:"https://fansly.com/SashaMoon03", cta:true },
+    { ph:"img/threads.jpg",  text:"Threads",            url:"https://www.threads.com/@sasha_moon00" },
+    { ph:"img/x.jpg",        text:"X (Twitter)",        url:"https://x.com/SashaMoon00" },
+    { ph:"img/facebook.jpg", text:"Facebook",           url:"https://www.facebook.com/profile.php?id=61590896252495" },
   ],
 };
 /* ====== /EDIT HERE ====== */
